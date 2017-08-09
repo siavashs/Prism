@@ -1,0 +1,9 @@
+{namespace Prism.Macros.Code}
+
+/**
+ * @param content
+ * @param? language
+ */
+{template .html}
+  <pre><code{if $language} class="language-{$language}{/if}">{$content|noAutoescape}</code></pre>
+{/template}

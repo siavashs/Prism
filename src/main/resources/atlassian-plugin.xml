@@ -1,0 +1,56 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our web resources -->
+    <web-resource key="prism" name="JIRA Editor Reference Plugin Prism Macro Init">
+        <context>jira.navigator.advanced</context>
+        <context>jira.navigator.simple</context>
+        <context>jira.view.issue</context>
+        <context>gh-rapid</context>
+
+        <dependency>${atlassian.plugin.key}:handler</dependency>
+
+        <resource type="download" name="js/prism.js" location="js/prism.js"/>
+        <resource type="download" name="js/prism-init.js" location="js/prism-init.js"/>
+    </web-resource>
+
+    <web-resource key="handler" name="JIRA Editor Prism Plugin Context Init">
+        <context>jira.rich.editor</context>
+
+        <dependency>com.atlassian.jira.plugins.jira-editor-plugin:converter</dependency>
+
+        <resource name="soy/prism.soy.js" type="download" location="soy/prism.soy" />
+
+        <transformation extension="soy">
+            <transformer key="soyTransformer"/>
+        </transformation>
+    </web-resource>
+
+    <web-resource key="css" name="JIRA Editor Reference Plugin CSS Resources">
+      <context>jira.navigator.advanced</context>
+      <context>jira.navigator.simple</context>
+      <context>jira.view.issue</context>
+      <context>gh-rapid</context>
+
+        <resource type="download" name="css/prism.css" location="css/prism.css"/>
+    </web-resource>
+
+    <macro key='code' name='{code} formatting macro'
+       class='com.catawiki.jira.prism.Code'>
+      <description>Syntax highlighting for code blocks.</description>
+      <param name="convert-selector">code-macro</param>
+      <param name="convert-function">Prism.Macros.Code.convert</param>
+    </macro>
+
+    <component key="init" class="com.catawiki.jira.prism.Init"
+      name="Prism initialization support">
+      <description>Helper module to automatic disabling / enabling of JIRA standard code macro on
+        installation or enabling / deinstallation or disabling of Prism Syntax Highlighter plugin</description>
+    </component>
+</atlassian-plugin>
