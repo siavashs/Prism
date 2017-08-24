@@ -1,8 +1,12 @@
 Prism is a `{code}` macro plugin for Atlassian JIRA.
 
 ## Features
-* Support for many programming languages
 * Client side syntax highlighting using [Prism](http://prismjs.com/)
+* Support for many programming languages
+* Line numbers
+* Line highlighting
+* Commandline with output support
+* Whitespace normalization
 
 ## Build
 Install **Atlassian Plugin SDK** and run `atlas-package`.
@@ -20,7 +24,7 @@ end
 {code}
 ```
 
-You can specify another language:
+### Selecting language
 
 ```
 {code:java}
@@ -31,6 +35,36 @@ public class Bar extends Foo {
     this.a = a;
   }
 }
+{code}
+```
+
+### Enabling line numbers
+
+Syntax: `ln` or `linenumbers`
+
+```
+{code:ruby|ln}
+...
+{code}
+```
+
+### Highlighting lines
+
+Syntax: `hl=<line(s)>,<range>,...` or `highlight=<line(s)>,<range>,...`
+
+```
+{code:ruby|hl=2,4-6}
+...
+{code}
+```
+
+### Showing commandline with optional output
+
+Syntax: `cmd=<user>@<host>[><output line(s),<ranges>,...]` or `commandline=<user>@<host>[><output line(s),<ranges>,...]`
+
+```
+{code:bash|cmd=siavash@catawiki>2,5-30}
+...
 {code}
 ```
 
