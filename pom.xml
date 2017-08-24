@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.catawiki.jira</groupId>
     <artifactId>prism</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <organization>
         <name>Catawiki B.V.</name>
@@ -158,6 +158,14 @@
                         </dependency>
                     </scannedDependencies>
                     <verbose>false</verbose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
         </plugins>

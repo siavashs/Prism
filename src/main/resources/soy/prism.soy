@@ -3,7 +3,22 @@
 /**
  * @param content
  * @param? language
+ * @param? linenumbers
+ * @param? highlight
+ * @param? commandline
+ * @param? user
+ * @param? host
+ * @param? output
  */
 {template .html}
-  <pre><code{if $language} class="language-{$language}{/if}">{$content}</code></pre>
+  <pre
+    {if $linenumbers} class="line-numbers" {/if}
+    {if $highlight} data-line="{$highlight}" {/if}
+    {if $commandline} class="command-line" {/if}
+    {if $user} data-user="{$user}" {/if}
+    {if $host} data-host="{$host}" {/if}
+    {if $output} data-output="{$output}" {/if}
+    >
+    <code {if $language} class="language-{$language}" {/if}>{$content}</code>
+  </pre>
 {/template}
