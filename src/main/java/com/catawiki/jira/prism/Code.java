@@ -68,14 +68,14 @@ public class Code extends BaseMacro {
             }
         }
 
+        String language = "ruby";
         if (parameters.containsKey("0")) {
-            String language = "ruby";
             String parameter = (String) parameters.get("0");
             if (checkLanguage(parameter)) {
                 language = parameter;
             }
-            templateParams.put("language", language);
         }
+        templateParams.put("language", language);
 
         try {
             return this.soyTemplateRenderer.render(
