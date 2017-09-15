@@ -8,7 +8,7 @@
     </plugin-info>
 
     <!-- add our web resources -->
-    <web-resource key="prism" name="JIRA Editor Reference Plugin Prism Macro Init">
+    <web-resource key="prism" name="Prism Macro Init">
         <context>jira.navigator.advanced</context>
         <context>jira.navigator.simple</context>
         <context>jira.view.issue</context>
@@ -20,7 +20,7 @@
         <resource type="download" name="js/prism-init.js" location="js/prism-init.js"/>
     </web-resource>
 
-    <web-resource key="handler" name="JIRA Editor Prism Plugin Context Init">
+    <web-resource key="handler" name="Prism Plugin Context Init">
         <context>jira.rich.editor</context>
 
         <dependency>com.atlassian.jira.plugins.jira-editor-plugin:converter</dependency>
@@ -32,7 +32,7 @@
         </transformation>
     </web-resource>
 
-    <web-resource key="css" name="JIRA Editor Reference Plugin CSS Resources">
+    <web-resource key="css" name="Prism CSS Resources">
       <context>jira.navigator.advanced</context>
       <context>jira.navigator.simple</context>
       <context>jira.view.issue</context>
@@ -50,7 +50,7 @@
 
     <component key="init" class="com.catawiki.jira.prism.Init"
       name="Prism initialization support">
-      <description>Helper module to automatic disabling / enabling of JIRA standard code macro on
+      <description>Helper module to automatic disabling / enabling of Jira standard code macro on
         installation or enabling / deinstallation or disabling of Prism Syntax Highlighter plugin</description>
     </component>
 </atlassian-plugin>

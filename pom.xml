@@ -15,7 +15,7 @@
     </organization>
 
     <name>Prism</name>
-    <description>Code syntax highlighting plugin for Atlassian JIRA.</description>
+    <description>Code syntax highlighting plugin for Atlassian Jira.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>

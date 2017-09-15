@@ -1,4 +1,6 @@
-Prism is a `{code}` macro plugin for Atlassian JIRA.
+[![](src/main/resources/images/marketplace.png)](https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism)
+
+Prism is a `{code}` macro plugin for Atlassian Jira.
 
 ## Features
 * Client side syntax highlighting using [Prism](http://prismjs.com/)
@@ -69,11 +71,11 @@ Syntax: `cmd=<user>@<host>[><output line(s),<ranges>,...]` or `commandline=<user
 ```
 
 ## Issues
-Visual editing in Rich Text Editor is not supported. While you don't have to disable Rich Text Editor in JIRA, you cannot use the **visual tab** to do code editing.
+Visual editing in Rich Text Editor is not fully supported. While you don't have to disable Rich Text Editor in Jira, you cannot use the **visual tab** to do code editing.
 
 ## Notes
 This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to fix JS compile issues in Atlassian Plugin SDK.
 
 This plugin is released without any support, if you want to add a new feature or fix a bug feel free to submit a PR.
 
-Also check [this JIRA Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
+Also check [this Jira Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
