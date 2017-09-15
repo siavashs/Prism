@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.catawiki.jira</groupId>
     <artifactId>prism</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 
     <organization>
         <name>Catawiki B.V.</name>
