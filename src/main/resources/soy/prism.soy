@@ -3,6 +3,7 @@
 /**
  * @param content
  * @param? language
+ * @param? title
  * @param? linenumbers
  * @param? highlight
  * @param? commandline
@@ -12,6 +13,7 @@
  */
 {template .html}
   <pre
+    {if $title} data-line-offset="-1.7" {/if}
     {if $linenumbers} class="line-numbers" {/if}
     {if $highlight} data-line="{$highlight}" {/if}
     {if $commandline} class="command-line" {/if}
@@ -19,6 +21,7 @@
     {if $host} data-host="{$host}" {/if}
     {if $output} data-output="{$output}" {/if}
     >
+    {if $title}<div data-manual><b>{$title}</b></div><hr style="border: 1px dashed;" data-manual/>{/if}
     <code {if $language} class="language-{$language}" {/if}>{$content}</code>
   </pre>
 {/template}

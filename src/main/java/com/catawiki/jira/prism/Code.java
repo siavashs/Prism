@@ -57,6 +57,9 @@ public class Code extends BaseMacro {
                         language = parameter;
                     }
                     break;
+                case "title":
+                    templateParams.put("title", (String) entry.getValue());
+                    break;
                 case "highlight":
                 case "hl":
                     templateParams.put("highlight", (String) entry.getValue());
