@@ -37,6 +37,9 @@ public class Code extends BaseMacro {
 
         ImmutableMap.Builder<String, Object> templateParams = ImmutableMap.builder();
 
+        // Default language
+        String language = "ruby";
+
         // Code body
         templateParams.put("content", body);
 
@@ -47,6 +50,13 @@ public class Code extends BaseMacro {
 
         for (Map.Entry<String, Object> entry : parameters.entrySet()) {
             switch (entry.getKey()) {
+                case "language":
+                case "lang":
+                    String parameter = (String) entry.getValue();
+                    if (checkLanguage(parameter)) {
+                        language = parameter;
+                    }
+                    break;
                 case "highlight":
                 case "hl":
                     templateParams.put("highlight", (String) entry.getValue());
@@ -68,7 +78,7 @@ public class Code extends BaseMacro {
             }
         }
 
-        String language = "ruby";
+        // Check for language as first parameter
         if (parameters.containsKey("0")) {
             String parameter = (String) parameters.get("0");
             if (checkLanguage(parameter)) {
