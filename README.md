@@ -1,4 +1,4 @@
-<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="232" src="src/main/resources/images/jira-software.png"/></a> <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="280" src="src/main/resources/images/service-desk.png"/></a> <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
+<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="174" src="src/main/resources/images/jira-software.png"/></a> <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="210" src="src/main/resources/images/service-desk.png"/></a> <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
 
 Prism is a `{code}` macro plugin for Atlassian Jira.
 
