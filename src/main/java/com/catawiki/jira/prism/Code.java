@@ -48,6 +48,11 @@ public class Code extends BaseMacro {
             templateParams.put("linenumbers", true);
         }
 
+        // wrap (optional)
+        if (parameters.containsValue("wrap")) {
+            templateParams.put("wrap", true);
+        }
+
         for (Map.Entry<String, Object> entry : parameters.entrySet()) {
             switch (entry.getKey()) {
                 case "language":

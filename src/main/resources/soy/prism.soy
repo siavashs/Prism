@@ -5,6 +5,7 @@
  * @param? language
  * @param? title
  * @param? linenumbers
+ * @param? wrap
  * @param? highlight
  * @param? commandline
  * @param? user
@@ -15,6 +16,7 @@
   <pre
     {if $title} data-line-offset="-1.7" {/if}
     {if $linenumbers} class="line-numbers" {/if}
+    {if $wrap} style="white-space: pre-wrap;" {/if}
     {if $highlight} data-line="{$highlight}" {/if}
     {if $commandline} class="command-line" {/if}
     {if $user} data-user="{$user}" {/if}
