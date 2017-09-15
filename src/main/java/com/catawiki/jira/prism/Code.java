@@ -65,6 +65,11 @@ public class Code extends BaseMacro {
                 case "title":
                     templateParams.put("title", (String) entry.getValue());
                     break;
+                case "firstline":
+                case "fl":
+                case "start":
+                    templateParams.put("start", (String) entry.getValue());
+                    break;
                 case "highlight":
                 case "hl":
                     templateParams.put("highlight", (String) entry.getValue());
