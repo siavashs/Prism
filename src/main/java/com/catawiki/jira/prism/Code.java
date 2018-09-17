@@ -118,7 +118,10 @@ public class Code extends BaseMacro {
             case "apacheconf":
             case "apl":
             case "applescript":
+            case "arduino":
+            case "arff":
             case "asciidoc":
+            case "asm6502":
             case "aspnet":
             case "autohotkey":
             case "autoit":
@@ -130,22 +133,32 @@ public class Code extends BaseMacro {
             case "bro":
             case "c":
             case "clike":
+            case "clojure":
             case "coffeescript":
             case "cpp":
             case "crystal":
             case "csharp":
+            case "csp":
             case "css":
-            case "css-extras":
             case "d":
             case "dart":
             case "diff":
             case "django":
             case "docker":
+            case "dockerfile":
+            case "dotnet":
             case "eiffel":
+            case "elisp":
             case "elixir":
+            case "elm":
+            case "emacs":
+            case "erb":
             case "erlang":
+            case "flow":
             case "fortran":
             case "fsharp":
+            case "gamemakerlanguage":
+            case "gedcom":
             case "gherkin":
             case "git":
             case "glsl":
@@ -156,51 +169,66 @@ public class Code extends BaseMacro {
             case "handlebars":
             case "haskell":
             case "haxe":
+            case "hpkp":
+            case "hsts":
+            case "html":
             case "http":
+            case "ichigojam":
             case "icon":
             case "inform7":
             case "ini":
+            case "io":
             case "j":
-            case "jade":
             case "java":
             case "javascript":
+            case "jinja2":
             case "jolie":
             case "json":
+            case "jsonp":
+            case "js":
             case "jsx":
             case "julia":
             case "keyman":
             case "kotlin":
             case "latex":
             case "less":
+            case "liquid":
+            case "lisp":
             case "livescript":
             case "lolcode":
             case "lua":
             case "makefile":
             case "markdown":
             case "markup":
+            case "mathml":
             case "matlab":
             case "mel":
             case "mizar":
             case "monkey":
+            case "n4jsd":
+            case "n4js":
             case "nasm":
             case "nginx":
             case "nim":
             case "nix":
             case "nsis":
             case "objectivec":
+            case "objectpascal":
             case "ocaml":
+            case "opencl":
             case "oz":
             case "parigp":
             case "parser":
             case "pascal":
             case "perl":
             case "php":
-            case "php-extras":
+            case "plsql":
             case "powershell":
             case "processing":
             case "prolog":
             case "properties":
             case "protobuf":
+            case "pug":
             case "puppet":
             case "pure":
             case "python":
@@ -208,6 +236,7 @@ public class Code extends BaseMacro {
             case "qore":
             case "r":
             case "reason":
+            case "renpy":
             case "rest":
             case "rip":
             case "roboconf":
@@ -218,21 +247,35 @@ public class Code extends BaseMacro {
             case "scala":
             case "scheme":
             case "scss":
+            case "shell":
             case "smalltalk":
             case "smarty":
+            case "soy":
             case "sql":
             case "stylus":
+            case "svg":
             case "swift":
+            case "tap":
             case "tcl":
             case "textile":
+            case "ts":
+            case "tsx":
+            case "tt2":
             case "twig":
             case "typescript":
             case "vbnet":
+            case "vb":
+            case "velocity":
             case "verilog":
             case "vhdl":
             case "vim":
+            case "wasm":
             case "wiki":
+            case "xeoracube":
+            case "xeora":
+            case "xml":
             case "xojo":
+            case "xquery":
             case "yaml":
                 return true;
             default:
