@@ -1,0 +1,95 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - maven-{{ checksum "pom.xml" }}
+          # fallback to using the latest cache if no exact match is found
+          - maven-
+
+      - run:
+          name: Install atlassian-plugin-sdk
+          command: |
+            wget -nv https://packages.atlassian.com/api/gpg/key/public
+            sudo apt-key add public
+            sudo sh -c 'echo "deb https://packages.atlassian.com/atlassian-sdk-deb stable contrib" >> /etc/apt/sources.list'
+            sudo apt-get -q -y install apt-transport-https
+            sudo apt-get -q update
+            sudo apt-get -q -y install atlassian-plugin-sdk
+
+      - run:
+          name: Build packages
+          command: |
+            atlas-package --batch-mode
+            mkdir artifacts/
+            mv target/prism-* artifacts/
+
+      - store_artifacts:
+          path: artifacts/
+          destination: packages
+
+      - run:
+          name: Generate release info
+          command: |
+            PREVIOUS_TAG=`git describe --tags --abbrev=0 ${CIRCLE_TAG}^`
+            # generate release body
+            git log ${PREVIOUS_TAG}..${CIRCLE_TAG}^ --pretty=format:"- %s" > artifacts/release.txt
+
+      - persist_to_workspace:
+          root: artifacts/
+          paths:
+            - prism-*
+            - release.txt
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-{{ checksum "pom.xml" }}
+
+  release:
+    docker:
+      - image: golang:latest
+    steps:
+      - attach_workspace:
+          at: ./artifacts
+      - run:
+          name: Publish release on GitHub
+          command: |
+            go get github.com/tcnksm/ghr
+            mv artifacts/release.txt /tmp/release.txt
+            ghr -t ${GITHUB_TOKEN} \
+              -u ${CIRCLE_PROJECT_USERNAME} \
+              -r ${CIRCLE_PROJECT_REPONAME} \
+              -n "${CIRCLE_TAG#v}" \
+              -b "$(</tmp/release.txt)" \
+              -delete \
+              ${CIRCLE_TAG} artifacts/
+
+workflows:
+  version: 2
+  build-n-release:
+    jobs:
+      - build:
+          filters:  # required since `deploy` has tag filters AND requires `build`
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
