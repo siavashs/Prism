@@ -1,5 +1,7 @@
 <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
 
+[![CircleCI](https://circleci.com/gh/catawiki/Prism.svg?style=svg)](https://circleci.com/gh/catawiki/Prism)
+
 Prism is a `{code}` macro plugin for Atlassian Jira.
 
 <img width="120" src="src/main/resources/images/jira-software.png"/> <img width="140" src="src/main/resources/images/service-desk.png"/>
