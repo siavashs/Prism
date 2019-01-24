@@ -43,9 +43,11 @@ jobs:
       - run:
           name: Generate release info
           command: |
-            PREVIOUS_TAG=`git describe --tags --abbrev=0 ${CIRCLE_TAG}^`
-            # generate release body
-            git log ${PREVIOUS_TAG}..${CIRCLE_TAG}^ --pretty=format:"- %s" > artifacts/release.txt
+            if [[ $CIRCLE_TAG ]]; then
+              PREVIOUS_TAG=`git describe --tags --abbrev=0 ${CIRCLE_TAG}^`
+              # generate release body
+              git log ${PREVIOUS_TAG}..${CIRCLE_TAG}^ --pretty=format:"- %s" > artifacts/release.txt
+            fi
 
       - persist_to_workspace:
           root: artifacts/
