@@ -119,3 +119,6 @@ This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to 
 This plugin is released without any support, if you want to add a new feature or fix a bug feel free to [submit a PR](https://github.com/catawiki/Prism/pull/new/master).
 
 Also check [this Jira Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
+
+## Privacy
+see [PRIVACY.md](PRIVACY.md)
