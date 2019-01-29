@@ -119,4 +119,4 @@ This plugin is released without any support, if you want to add a new feature or
 Also check [this Jira Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
 
 ## Privacy
-see [PRIVACY.md](PRIVACY.MD)
+see [PRIVACY.md](PRIVACY.md)
