@@ -118,8 +118,5 @@ This plugin is released without any support, if you want to add a new feature or
 
 Also check [this Jira Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
 
-## Privacy Policy
-
-Catawiki B.V. DOES NOT receive or collect any information you enter while using this application.
-
-This policy is effective as of 1 January 2019.
+## Privacy
+see [PRIVACY.md](PRIVACY.MD)
