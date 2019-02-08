@@ -115,6 +115,7 @@ public class Code extends BaseMacro {
             case "abap":
             case "actionscript":
             case "ada":
+            case "adoc":
             case "apacheconf":
             case "apl":
             case "applescript":
@@ -132,8 +133,10 @@ public class Code extends BaseMacro {
             case "brainfuck":
             case "bro":
             case "c":
+            case "cil":
             case "clike":
             case "clojure":
+            case "coffee":
             case "coffeescript":
             case "cpp":
             case "crystal":
@@ -158,6 +161,7 @@ public class Code extends BaseMacro {
             case "fortran":
             case "fsharp":
             case "gamemakerlanguage":
+            case "gcode":
             case "gedcom":
             case "gherkin":
             case "git":
@@ -169,6 +173,7 @@ public class Code extends BaseMacro {
             case "handlebars":
             case "haskell":
             case "haxe":
+            case "hcl":
             case "hpkp":
             case "hsts":
             case "html":
@@ -181,6 +186,7 @@ public class Code extends BaseMacro {
             case "j":
             case "java":
             case "javascript":
+            case "javastacktrace":
             case "jinja2":
             case "jolie":
             case "json":
@@ -202,9 +208,11 @@ public class Code extends BaseMacro {
             case "markup":
             case "mathml":
             case "matlab":
+            case "md":
             case "mel":
             case "mizar":
             case "monkey":
+            case "n1ql":
             case "n4jsd":
             case "n4js":
             case "nasm":
@@ -231,10 +239,12 @@ public class Code extends BaseMacro {
             case "pug":
             case "puppet":
             case "pure":
+            case "py":
             case "python":
             case "q":
             case "qore":
             case "r":
+            case "rb":
             case "reason":
             case "renpy":
             case "rest":
@@ -258,11 +268,13 @@ public class Code extends BaseMacro {
             case "tap":
             case "tcl":
             case "textile":
+            case "toml":
             case "ts":
             case "tsx":
             case "tt2":
             case "twig":
             case "typescript":
+            case "vala":
             case "vbnet":
             case "vb":
             case "velocity":
@@ -277,6 +289,7 @@ public class Code extends BaseMacro {
             case "xojo":
             case "xquery":
             case "yaml":
+            case "yml":
                 return true;
             default:
                 return false;
