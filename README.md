@@ -111,8 +111,6 @@ Syntax: `cmd=<user>@<host>[><output line(s),<ranges>,...]` or `commandline=<user
 ## Known Issues
 Visual editing in Rich Text Editor is not fully supported. While you don't have to disable Rich Text Editor in Jira, you cannot use the **visual tab** to do code editing.
 
-Line `highlight`ing does not work correctly when soft `wrap`s are enabled(https://github.com/PrismJS/prism/issues/1189).
-
 ## Notes
 This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to fix JS compile issues with Atlassian Plugin SDK.
 
