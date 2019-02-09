@@ -1,3 +1,5 @@
+<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img src="src/main/resources/images/logo.svg"/></a>
+
 <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
 
 [![CircleCI](https://circleci.com/gh/catawiki/Prism.svg?style=svg)](https://circleci.com/gh/catawiki/Prism)
