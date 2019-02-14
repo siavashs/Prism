@@ -76,7 +76,7 @@ jobs:
               -r ${CIRCLE_PROJECT_REPONAME} \
               -n "${CIRCLE_TAG#v}" \
               -b "$(</tmp/release.txt)" \
-              -delete \
+              -draft \
               ${CIRCLE_TAG} artifacts/
 
 workflows:
