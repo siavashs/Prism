@@ -130,12 +130,17 @@ public class Code extends BaseMacro {
             case "basic":
             case "batch":
             case "bison":
+            case "bnf":
+            case "abnf":
+            case "ebnf":
+            case "rbnf":
             case "brainfuck":
             case "bro":
             case "c":
             case "cil":
             case "clike":
             case "clojure":
+            case "cmake":
             case "coffee":
             case "coffeescript":
             case "cpp":
@@ -151,6 +156,7 @@ public class Code extends BaseMacro {
             case "dockerfile":
             case "dotnet":
             case "eiffel":
+            case "ejs":
             case "elisp":
             case "elixir":
             case "elm":
@@ -175,6 +181,7 @@ public class Code extends BaseMacro {
             case "haxe":
             case "hcl":
             case "hpkp":
+            case "hs":
             case "hsts":
             case "html":
             case "http":
@@ -184,12 +191,16 @@ public class Code extends BaseMacro {
             case "ini":
             case "io":
             case "j":
+            case "javadoclike":
+            case "javadoc":
             case "java":
             case "javascript":
             case "javastacktrace":
             case "jinja2":
             case "jolie":
+            case "jsdoc":
             case "json":
+            case "json5":
             case "jsonp":
             case "js":
             case "jsx":
@@ -230,6 +241,7 @@ public class Code extends BaseMacro {
             case "pascal":
             case "perl":
             case "php":
+            case "phpdoc":
             case "plsql":
             case "powershell":
             case "processing":
@@ -246,6 +258,7 @@ public class Code extends BaseMacro {
             case "r":
             case "rb":
             case "reason":
+            case "regex":
             case "renpy":
             case "rest":
             case "rip":
@@ -265,6 +278,7 @@ public class Code extends BaseMacro {
             case "stylus":
             case "svg":
             case "swift":
+            case "t4":
             case "tap":
             case "tcl":
             case "textile":
