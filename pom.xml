@@ -2,12 +2,12 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.catawiki.jira</groupId>
+    <groupId>com.github.jira</groupId>
     <artifactId>prism</artifactId>
     <version>1.2.4</version>
     <organization>
-        <name>Catawiki B.V.</name>
-        <url>https://www.catawiki.com/</url>
+        <name>Prism Project</name>
+        <url>https://prismjira.app/</url>
     </organization>
     <name>Prism</name>
     <description>Code syntax highlighting plugin for Atlassian Jira.</description>
@@ -108,7 +108,7 @@
                       -->
                         <!-- Add package to export here -->
                         <Export-Package>
-                            com.catawiki.jira.prism,
+                            com.github.jira.prism,
                         </Export-Package>
                         <!-- Add package import here -->
                         <Import-Package>
