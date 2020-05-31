@@ -35,7 +35,7 @@ jobs:
       - name: Build packages
         run: |
           atlas-package --batch-mode
-          zip --junk-paths prism-${{ github.ref }} target/prism-*
+          zip --junk-paths prism target/prism-*
 
       - name: Create Release
         id: create_release
@@ -54,6 +54,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./prism-${{ github.ref }}.zip
-          asset_name: prism-${{ github.ref }}.zip
+          asset_path: ./prism.zip
+          asset_name: prism.zip
           asset_content_type: application/zip
