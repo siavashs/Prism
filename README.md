@@ -1,8 +1,6 @@
-<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img src="src/main/resources/images/logo.svg"/></a>
+<a href="https://marketplace.atlassian.com/plugins/com.github.jira.prism"><img src="src/main/resources/images/logo.svg"/></a>
 
-<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
-
-[![CircleCI](https://circleci.com/gh/catawiki/Prism.svg?style=svg)](https://circleci.com/gh/catawiki/Prism)
+<a href="https://marketplace.atlassian.com/plugins/com.github.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
 
 Prism is a `{code}` macro plugin for Atlassian Jira.
 
@@ -105,7 +103,7 @@ Syntax: `highlight=<line(s)>,<range>,...` or `hl=<line(s)>,<range>,...`
 Syntax: `cmd=<user>@<host>[><output line(s),<ranges>,...]` or `commandline=<user>@<host>[><output line(s),<ranges>,...]`
 
 ```
-{code:bash|cmd=siavash@catawiki>2,5-30}
+{code:bash|cmd=siavash@localhost>2,5-30}
 ...
 {code}
 ```
@@ -116,7 +114,7 @@ Visual editing in Rich Text Editor is not fully supported. While you don't have 
 ## Notes
 This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to fix JS compile issues with Atlassian Plugin SDK.
 
-This plugin is released without any support, if you want to add a new feature or fix a bug feel free to [submit a PR](https://github.com/catawiki/Prism/pull/new/master).
+This plugin is released without any support, if you want to add a new feature or fix a bug feel free to [submit a PR](https://github.com/siavashs/Prism/pull/new/master).
 
 Also check [this Jira Server issue](https://jira.atlassian.com/browse/JRASERVER-21067) regarding `{code}` macro limitations and why this plugin was developed.
 

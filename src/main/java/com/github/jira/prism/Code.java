@@ -1,4 +1,4 @@
-package com.catawiki.jira.prism;
+package com.github.jira.prism;
 
 import com.atlassian.jira.template.soy.SoyTemplateRendererProvider;
 import com.atlassian.renderer.RenderContext;
@@ -96,7 +96,7 @@ public class Code extends BaseMacro {
 
         try {
             return this.soyTemplateRenderer.render(
-                    "com.catawiki.jira.prism:handler",
+                    "com.github.jira.prism:handler",
                     "Prism.Macros.Code.html",
                     templateParams.build());
         } catch (SoyException e) {
