@@ -38,14 +38,12 @@ jobs:
           mkdir artifacts/
           mv target/prism-* artifacts/
 
-      - name: Release
-        shell: bash
-        run: |
-          export PREVIOUS_TAG=`git describe --tags --abbrev=0 ${{ github.ref }}^`
-          echo $PREVIOUS_TAG
-          echo ${{ github.ref }}
-          git log $PREVIOUS_TAG..${{ github.ref }} > release-notes.txt
-          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
-          bin/hub release create --draft --attach artifacts/ --file release-notes.txt ${{ github.ref }}
+      - name: Create Release
+        uses: actions/create-release@v1.1.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
