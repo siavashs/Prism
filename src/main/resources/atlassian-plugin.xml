@@ -44,13 +44,13 @@
     </web-resource>
 
     <macro key='code' name='{code} formatting macro'
-       class='com.github.jira.prism.Code'>
+       class='com.catawiki.jira.prism.Code'>
       <description>Syntax highlighting for code blocks.</description>
       <param name="convert-selector">code-macro</param>
       <param name="convert-function">Prism.Macros.Code.convert</param>
     </macro>
 
-    <component key="init" class="com.github.jira.prism.Init"
+    <component key="init" class="com.catawiki.jira.prism.Init"
       name="Prism initialization support">
       <description>Helper module to automatic disabling / enabling of Jira standard code macro on
         installation or enabling / deinstallation or disabling of Prism Syntax Highlighter plugin</description>

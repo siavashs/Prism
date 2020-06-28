@@ -1,4 +1,4 @@
-package com.github.jira.prism;
+package com.catawiki.jira.prism;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
