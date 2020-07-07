@@ -6,6 +6,8 @@ Prism is a `{code}` macro plugin for Atlassian Jira.
 
 <img width="120" src="src/main/resources/images/jira-software.png"/> <img width="140" src="src/main/resources/images/service-desk.png"/>
 
+![Code scan](https://github.com/siavashs/Prism/workflows/Code%20scan/badge.svg)
+
 ## Features
 * Client side syntax highlighting using [Prism](http://prismjs.com/)
 * Support for many [programming languages](http://prismjs.com/#languages-list)
