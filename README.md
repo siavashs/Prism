@@ -1,10 +1,23 @@
-<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img src="src/main/resources/images/logo.svg"/></a>
-
-<a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism"><img width="150" src="src/main/resources/images/marketplace.png"/></a>
+<p>
+  <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism">
+    <div align="center">
+      <div>
+        <img src="src/main/resources/images/logo.svg"/>
+      </div>
+      <div>
+        <img height="25" src="src/main/resources/images/marketplace.svg"/>
+      </div>
+      <div>
+        <img height="25" src="src/main/resources/images/jira-software.svg"/>
+      </div>
+      <div>
+        <img height="25" src="src/main/resources/images/jira-service-desk.svg"/>
+      </div>
+    </div>
+  </a>
+</p>
 
 Prism is a `{code}` macro plugin for Atlassian Jira.
-
-<img width="120" src="src/main/resources/images/jira-software.png"/> <img width="140" src="src/main/resources/images/service-desk.png"/>
 
 ![Code scan](https://github.com/siavashs/Prism/workflows/Code%20scan/badge.svg)
 
