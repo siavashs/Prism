@@ -95,7 +95,7 @@
                         </application>
                         <application>
                             <applicationKey>jira-servicedesk</applicationKey>
-                            <version>${jira.servicedesk.application.version}</version>
+                            <version>${servicedesk.version}</version>
                         </application>
                     </applications>
                     <!-- Uncomment to install TestKit backdoor in JIRA. -->
@@ -159,7 +159,7 @@
     <properties>
         <amps.version>8.1.1</amps.version>
         <jira.version>8.13.0</jira.version>
-        <jira.servicedesk.application.version>4.7.1</jira.servicedesk.application.version>
+        <servicedesk.version>4.13.0</servicedesk.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>
         <!-- This key is used to keep the consistency between the key in atlassian-plugin.xml and the key to generate bundle. -->
