@@ -96,9 +96,10 @@ public class Code extends BaseMacro {
 
         try {
             return this.soyTemplateRenderer.render(
-                    "com.catawiki.jira.prism:handler",
+                    "com.catawiki.jira.prism:soy",
                     "Prism.Macros.Code.html",
-                    templateParams.build());
+                    templateParams.build()
+            );
         } catch (SoyException e) {
             return String.format(FALLBACK_RENDER_OUTPUT, body);
         }

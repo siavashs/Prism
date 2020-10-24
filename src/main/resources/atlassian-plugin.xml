@@ -9,50 +9,35 @@
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
 
+    <macro key="code" class="com.catawiki.jira.prism.Code" name="{code} formatting macro">
+      <description>Syntax highlighting for code blocks.</description>
+      <param name="convert-selector">code-macro</param>
+      <param name="convert-function">Prism.Macros.Code.convert</param>
+    </macro>
+
+    <component key="init" class="com.catawiki.jira.prism.Init" name="Prism Plugin Initialization">
+      <description>Helper module to enable/disable JIRA standard code macro on Prism plugin uninstall/install.</description>
+    </component>
+
     <!-- add our web resources -->
-    <web-resource key="prism" name="Prism Macro Init">
-        <context>jira.navigator.advanced</context>
-        <context>jira.navigator.simple</context>
-        <context>jira.view.issue</context>
-        <context>gh-rapid</context>
-
-        <dependency>${atlassian.plugin.key}:handler</dependency>
-
-        <resource type="download" name="js/prism.js" location="js/prism.js"/>
-        <resource type="download" name="js/prism-init.js" location="js/prism-init.js"/>
-    </web-resource>
-
-    <web-resource key="handler" name="Prism Plugin Context Init">
+    <web-resource key="soy" name="Prism Plugin Soy Transformer">
         <context>jira.rich.editor</context>
-
         <dependency>com.atlassian.jira.plugins.jira-editor-plugin:converter</dependency>
-
-        <resource name="soy/prism.soy.js" type="download" location="soy/prism.soy" />
-
+        <resource name="soy/prism.soy.js" type="download" location="soy/prism.soy"/>
         <transformation extension="soy">
             <transformer key="soyTransformer"/>
         </transformation>
     </web-resource>
 
     <web-resource key="css" name="Prism CSS Resources">
-      <context>jira.navigator.advanced</context>
-      <context>jira.navigator.simple</context>
-      <context>jira.view.issue</context>
-      <context>gh-rapid</context>
-
+        <context>jira.general</context>
         <resource type="download" name="css/prism.css" location="css/prism.css"/>
     </web-resource>
 
-    <macro key='code' name='{code} formatting macro'
-       class='com.catawiki.jira.prism.Code'>
-      <description>Syntax highlighting for code blocks.</description>
-      <param name="convert-selector">code-macro</param>
-      <param name="convert-function">Prism.Macros.Code.convert</param>
-    </macro>
-
-    <component key="init" class="com.catawiki.jira.prism.Init"
-      name="Prism initialization support">
-      <description>Helper module to automatic disabling / enabling of Jira standard code macro on
-        installation or enabling / deinstallation or disabling of Prism Syntax Highlighter plugin</description>
-    </component>
+    <web-resource key="js" name="Prism JavaScript Resources">
+        <context>jira.general</context>
+        <dependency>${atlassian.plugin.key}:soy</dependency>
+        <resource type="download" name="js/prism-core.js" location="js/prismjs/prism.js"/>
+        <resource type="download" name="js/prism-event.js" location="js/event.js"/>
+    </web-resource>
 </atlassian-plugin>
