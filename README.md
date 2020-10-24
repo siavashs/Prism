@@ -29,8 +29,28 @@ Prism is a `{code}` macro plugin for Atlassian Jira.
 * Commandline with output support
 * Whitespace normalization
 
+## Supported Versions
+
+| Name         | Version
+|--------------|-----------------
+| JIRA         | 7.2.0+
+| Service Desk | 3.2.0+
+
 ## Build
 Install [**Atlassian Plugin SDK**](https://developer.atlassian.com/docs/getting-started/set-up-the-atlassian-plugin-sdk-and-build-a-project/install-the-atlassian-sdk-on-a-linux-or-mac-system) and run `atlas-package`.
+
+## Development
+To run a test instance of JIRA, JIRA Software and Service Desk run the following command:
+```shell
+atlas-run
+```
+All versions are specified in [`pom.xml`](./pom.ml).
+
+To run specific version of the JIRA server and software either edit [`pom.xml`](./pom.ml) or pass the versions as commandline options:
+```shell
+atlas-run -v 7.11.0 -D jira.version=7.11.0 -D servicedesk.version=3.14.0
+```
+**Important:** Make sure to use a compatible `servicedesk.version`, check [compatible versions](https://marketplace.atlassian.com/apps/1213632/jira-service-desk/version-history).
 
 ## Usage
 
@@ -127,7 +147,7 @@ Syntax: `cmd=<user>@<host>[><output line(s),<ranges>,...]` or `commandline=<user
 Visual editing in Rich Text Editor is not fully supported. While you don't have to disable Rich Text Editor in Jira, you cannot use the **visual tab** to do code editing.
 
 ## Notes
-This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to fix JS compile issues with Atlassian Plugin SDK.
+This plugin uses a slightly modified version of [Prism](http://prismjs.com/) to fix minor bugs with line highlighting.
 
 This plugin is released without any support, if you want to add a new feature or fix a bug feel free to [submit a PR](https://github.com/siavashs/Prism/pull/new/master).
 
