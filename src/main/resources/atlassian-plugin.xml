@@ -36,6 +36,7 @@
 
     <web-resource key="js" name="Prism JavaScript Resources">
         <context>jira.general</context>
+        <dependency>jira.webresources:viewissue</dependency>
         <dependency>${atlassian.plugin.key}:soy</dependency>
         <resource type="download" name="js/prism-core.js" location="js/prismjs/prism.js"/>
         <resource type="download" name="js/prism-event.js" location="js/event.js"/>
