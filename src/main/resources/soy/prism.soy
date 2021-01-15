@@ -1,4 +1,4 @@
-{namespace Prism.Macros.Code}
+{namespace JiraPrism.Macros.Code}
 
 /**
  * @param content
@@ -28,4 +28,24 @@
     {if $title}<div data-manual><b>{$title}</b></div><hr style="border: 1px dashed;" data-manual/>{/if}
     <code {if $language} class="language-{$language}" {/if}>{$content}</code>
   </pre>
+{/template}
+
+/**
+ * @param content
+ * @param parameters
+ */
+{template .wiki}
+  <pre class="code-macro" title="{$parameters}">
+    {$content}
+  </pre>
+{/template}
+
+/**
+ * @param innerMarkup
+ * @param node
+ */
+{template .convert}
+  {lb}code{if $node.title}:{$node.title}{/if}{rb}
+    {$innerMarkup|noAutoescape}
+  {lb}code{rb}
 {/template}
