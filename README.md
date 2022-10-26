@@ -1,3 +1,20 @@
+# Prism has reached it's end of life :older_adult:
+This plugin has reached it's EOL and is no longer developed or supported.
+There are different reasons behind this decision:
+- [Atlassian have ended sales for new Server licenses, and will end support for server on February 15, 2024](https://confluence.atlassian.com/support/atlassian-support-end-of-life-policy-201851003.html): This means that there is no future for JIRA software and this plugin is not portable to JIRA Cloud for technical reasons (you can complain to Atlassian about it).
+- Hosting an application on Atlassian marketplace is not fun: apart from technical issues, there is demanding work to prove you application is still compatible with their policies for Data Center application while Atlassian threatens you that you free application will be removed. This is a tedious for an Open Source project which is offered for free (or I'm lazy!)
+- The community did not contribute or support the project: Multiple companies reached out in the past year after no new versions of the plugin were released. While they demanded a new release they never offered to contribute in development, testing or financially supporting the project by donations or hiring a developer to help the project.
+- I don't have free time to work on the plugin.
+- I do not use JIRA anymore.
+- I've lost interest.
+
+Feel free to fork and improve this project.
+
+Cheers,\
+Siavash
+
+---
+
 <p>
   <a href="https://marketplace.atlassian.com/plugins/com.catawiki.jira.prism">
     <div align="center">
