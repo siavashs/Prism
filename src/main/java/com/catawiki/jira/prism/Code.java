@@ -1,9 +1,11 @@
 package com.catawiki.jira.prism;
 
+import com.atlassian.jira.issue.fields.renderer.IssueRenderContext;
 import com.atlassian.jira.template.soy.SoyTemplateRendererProvider;
 import com.atlassian.renderer.RenderContext;
 import com.atlassian.renderer.v2.RenderMode;
 import com.atlassian.renderer.v2.macro.BaseMacro;
+import com.atlassian.renderer.v2.macro.Macro;
 import com.atlassian.renderer.v2.macro.MacroException;
 import com.atlassian.soy.renderer.SoyException;
 import com.atlassian.soy.renderer.SoyTemplateRenderer;
@@ -29,12 +31,22 @@ public class Code extends BaseMacro {
 
     @Override
     public RenderMode getBodyRenderMode() {
-        return RenderMode.allow(RenderMode.F_NONE);
+        return RenderMode.NO_RENDER;
     }
 
     @Override
     public String execute(Map<String, Object> parameters, String body, RenderContext renderContext) throws MacroException {
+        try {
+            if (Boolean.TRUE.equals(renderContext.getParam(IssueRenderContext.WYSIWYG_PARAM))) {
+                return wysiwygMode(parameters, body);
+            }
+            return htmlMode(parameters, body);
+        } catch (SoyException e) {
+            return String.format(FALLBACK_RENDER_OUTPUT, body);
+        }
+    }
 
+    private String htmlMode(Map<String, Object> parameters, String body) {
         ImmutableMap.Builder<String, Object> templateParams = ImmutableMap.builder();
 
         // Default language
@@ -94,14 +106,23 @@ public class Code extends BaseMacro {
         }
         templateParams.put("language", language);
 
-        try {
-            return this.soyTemplateRenderer.render(
-                    "com.catawiki.jira.prism:soy",
-                    "Prism.Macros.Code.html",
-                    templateParams.build()
-            );
-        } catch (SoyException e) {
-            return String.format(FALLBACK_RENDER_OUTPUT, body);
-        }
+        return this.soyTemplateRenderer.render(
+                "com.catawiki.jira.prism:soy",
+                "JiraPrism.Macros.Code.html",
+                templateParams.build()
+        );
+    }
+
+    private String wysiwygMode(Map<String, Object> parameters, String body) {
+        ImmutableMap.Builder<String, Object> templateParams = ImmutableMap.builder();
+
+        templateParams.put("content", body);
+        templateParams.put("parameters", parameters.get(Macro.RAW_PARAMS_KEY));
+
+        return this.soyTemplateRenderer.render(
+                "com.catawiki.jira.prism:soy",
+                "JiraPrism.Macros.Code.wiki",
+                templateParams.build()
+        );
     }
 }

@@ -11,8 +11,8 @@
 
     <macro key="code" class="com.catawiki.jira.prism.Code" name="{code} formatting macro">
       <description>Syntax highlighting for code blocks.</description>
-      <param name="convert-selector">code-macro</param>
-      <param name="convert-function">Prism.Macros.Code.convert</param>
+      <param name="convert-selector">pre.code-macro</param>
+      <param name="convert-function">JiraPrism.Macros.Code.convert</param>
     </macro>
 
     <component key="init" class="com.catawiki.jira.prism.Init" name="Prism Plugin Initialization">
